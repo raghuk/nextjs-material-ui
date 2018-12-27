@@ -1,11 +1,15 @@
+const routes = require("next-routes");
 
-export default [
-  {
-    path: '/',
-    title: 'Home'
-  },
-  {
-    path: '/about',
-    title: 'About'
-  }
-]
+/*
+ *
+ * Name       Page      Pattern
+ * ----       ----      -----
+ * about      about     /about
+ * customer   profile   /customer/:id
+ * 
+ */
+
+// define named routes
+module.exports = routes()
+  .add("about")
+  .add('customer', '/customer/:id', 'profile')
